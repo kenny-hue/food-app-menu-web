@@ -10,7 +10,7 @@ def display_menu():
 
 def is_valid_choice(choice):
   try:
-    return 0 < int(choice) > 0 and int(choice) < 4
+    return 0 < int(choice) > 0 and int(choice) <= len(order_manager.get_menu_items())
   except:
     return False
 

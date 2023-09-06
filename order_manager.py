@@ -1,26 +1,12 @@
-menu = [{
-  "name": "Burger",
-  "price": 5.0,
-  "available": True
-}, {
-  "name": "Pizza",
-  "price": 8.0,
-  "available": True
-}, {
-  "name": "Pasta",
-  "price": 6.0,
-  "available": True
-}, {
-  "name": "Salad",
-  "price": 4.0,
-  "available": True
-}]
+import requests
 
+menu_url = 'https://gist.githubusercontent.com/mhassanist/ebea3d06c5dc942e190a69a8330d4906/raw/923a8cbedd175652abcdc53a0f805d7082cdc3fc/menu.json'
 order = []
 
-
 def get_menu_items():
- return menu
+  req = requests.get(menu_url)
+  menu = req.json()['menu']
+  return menu
 
 
 def get_order_total():
